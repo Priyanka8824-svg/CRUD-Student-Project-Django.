@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Show Page</title>
+{% endblock %}
+
+{% block content %}
+
+<h1>Student Form</h1>
+<table class="table table-striped">
+
+    <thead>
+        <tr style="color:orange">
+            <td>Student Roll</td>
+            <td>Student Name</td>
+            <td>Highest_edu</td>
+            <td>City</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for student in obj %}
+        <tr>
+            <td>{{student.roll}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.highest_edu}}</td>
+            <td>{{student.city}}</td>
+
+            <td>
+                <a href="/a1/uv/{{student.roll}}/"><button class="btn btn-success">Update</button></a>
+                <a href="/a1/dv/{{student.roll}}/"><button class="btn btn-warning">Delete</button></a>
+            </td>
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
